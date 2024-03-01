@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="f1(event)">Click</button>
+    <!-- when we click the above button then the output will be PointerEvent
+    so the class name is PointerEvent. It is called native event and only works in few browsers. To avoid this problem and to make the code work in all browsers react people created a wrapper around our Native event(pointer Event) called synthetic event which is supported by all the browsers.
+    -->
+
+    <script>
+      function f1(e) {
+        console.log(e);
+      }
+    </script>
+  </body>
+</html>
