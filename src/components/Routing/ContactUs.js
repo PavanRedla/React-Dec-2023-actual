@@ -25,20 +25,22 @@ import { myContext } from "../../utils/Mycontext";
 export default class ContactUs extends Component {
   render() {
     return (
-      <myContext.Consumer>
-        {(userObj) => {
-          return (
-            <>
-              <h2 className="text-center">This is Contact Us Component</h2>
-              <h3>
-                Name Value is {userObj.Name}, age is {userObj.age}, add is{" "}
-                {userObj.add}, Topic is {userObj.topic} === APIContextExample
-                using Class component
-              </h3>
-            </>
-          );
-        }}
-      </myContext.Consumer>
+      <>
+        <h2 className="text-center">This is Contact Us Component</h2>
+        <myContext.Consumer>
+          {(userObj) => {
+            return (
+              <>
+                <h3>
+                  Name Value is {userObj.Name}, age is {userObj.age}, add is{" "}
+                  {userObj.add}, Topic is {userObj.topic} === APIContextExample
+                  using Class component
+                </h3>
+              </>
+            );
+          }}
+        </myContext.Consumer>
+      </>
     );
   }
 }

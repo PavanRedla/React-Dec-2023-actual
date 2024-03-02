@@ -4079,19 +4079,23 @@ import { UserConsumer } from '../../contexts/userContext'
 export default class ComponentF extends Component {
     render() {
         return (
-            <UserConsumer>
-                {
-                    (userObj) => {
-                        return (
-                            <>
-                                <h2>This is F component</h2>
-                                <h3>data is {userObj}</h3>
-                            </>
-                        )
-                    }
-                }
-            </UserConsumer>
-        )
+      <>
+        <h2 className="text-center">This is Contact Us Component</h2>
+        <myContext.Consumer>
+          {(userObj) => {
+            return (
+              <>
+                <h3>
+                  Name Value is {userObj.Name}, age is {userObj.age}, add is{" "}
+                  {userObj.add}, Topic is {userObj.topic} === APIContextExample
+                  using Class component
+                </h3>
+              </>
+            );
+          }}
+        </myContext.Consumer>
+      </>
+    );
     }
 }
 

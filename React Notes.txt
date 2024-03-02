@@ -2437,6 +2437,8 @@ FLUX VS REDUX
 -State is Mutable , Immutable state.
 
   
+  Props drilling can be avoided by context API, but contextAPI is not the best solution for large application and frequent change of state variable. In that case, we have to use REDUX.
+
 Redux
 =====
 -Redux is a state management library.
