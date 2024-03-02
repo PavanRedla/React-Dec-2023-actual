@@ -10,7 +10,7 @@ export default function Crud() {
   const [number, setNumber] = useState("");
 
   const fetchUsers = async function () {
-    let response = await axios.get("http://localhost:4000/users");
+    let response = await axios.get("http://localhost:4000");
     setUsers(...response.data);
   };
   const addUser = async function () {
@@ -20,7 +20,7 @@ export default function Crud() {
       email: email,
       number: number,
     };
-    let response = await axios.post("http://localhost:4000/users", newUser);
+    let response = await axios.post("http://localhost:4000", newUser);
     Swal.fire("Employee Added Successfully", "", "success");
     fetchUsers();
   };
