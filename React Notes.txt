@@ -2451,7 +2451,7 @@ Redux
  independently operating on the different parts of the state tree.
 
 
-View/UI-----> Action --> Reducer --> Store/State --> View
+Store---> View/UI-----> Action --> Reducer --> Store/State --> View
 
 
 3 Core Concepts in Redux
@@ -2461,7 +2461,12 @@ View/UI-----> Action --> Reducer --> Store/State --> View
 			(what happened)(purchase a TV)
 3. Reducer : Ties the store and actions together. (shopKeeper)
 
+- When you want to store the data, REDUX store can be used.
+- to update the data we have to trigger the action using REDUX ACTION.
+- REDUX says we can read the data from STORE but we cannot update the data using STORE, we have to trigger the ACTION to update the data that ACTION comes to REDUCER and reducer will take care of updating the values. and when the state values gets updated components will get re-rendered.
 
+- ACTION is a javascript object which holds the action to be performed.
+- REDUCER is a javascript function which can update the state.
 
 3 Principles
 ===========
