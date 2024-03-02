@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter } from "react-router-dom";
+import { myContext } from "./utils/Mycontext";
 
 let name = "SANJAY SAMANTRA";
 
@@ -14,7 +15,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <App name={name} /> 
+      <myContext.Provider
+        value={{ Name: "Sachin", add: "Mumbai", age: 45, topic: "APIContext" }}
+      >
+        <App name={name} />
+      </myContext.Provider>
     </BrowserRouter>
     {/* After importing BrowserRouter from react-dom-router and keeping the app component inside App component, Routing will work in App component and Routing will work in all the components present in App component  */}
   </StrictMode>

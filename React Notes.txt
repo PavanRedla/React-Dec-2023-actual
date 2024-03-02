@@ -2361,23 +2361,45 @@ Context API
 -ex: current authenticated user, theme, or preferred language.
 
 -There are 3 main steps to use the React context:
-1. Create context using the React.createContext({}) method.
-	export const MyContext = React.createContext(defaultValue);
-2. Provide a context value.
+
+Step - 1:
+----------
+create a folder utils and create Mycontext.js file in it.
+Create context using the React.createContext({}) method. in utils folder in Mycontext.js file
+
+export const MyContext = React.createContext(defaultValue);
+
+// we can use above line or we can use below lines to create API context
+
+const myContext = React.createContext({});
+
+const UserProvider = myContext.Provider;
+const UserConsumer = myContext.Consumer;
+
+export {UserProvider, UserConsumer}
+
+Provider is something which is giving the value and consumer is the component which is using that provided value.
+
+
+Step - 2:
+----------
+Provide a context value.
 	   <MyContext.Provider value={/* some value */}>
 	      <ComponentX />
 	   <MyContext.Provider>
-3. Consume the context value.
+
+Step - 3 for class component:
+----------------------------
+Consume the context value.
 	   <MyContext.Consumer>
 			{value => /* render something based on the context value */}
 		</MyContext.Consumer>
-		
 
-Read Context data in Function Component
----------------------------------------
+Step - 3 for fucntional component:
+---------------------------------
+
 const myContextObj = useContext(myContext);
 <div>Context Data is: {myContextObj}</div>
-
 
 
 
