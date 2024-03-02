@@ -24,6 +24,9 @@ export default function App(props) {
   // requestStartedInterceptor();
   // responseReceivedInterceptor();
 
+  console.log(process.env.NODE_ENV);
+  console.log(process.env.REACT_APP_MY_NAME);
+
   return (
     <div>
       {/* <Header /> */}

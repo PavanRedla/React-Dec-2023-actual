@@ -2267,7 +2267,8 @@ package.json vs package-lock.json
 -To avoid differences in installed dependencies on different environments and to generate the same results on every environment we should use the package-lock.json file to install dependencies.
 
 -package.json contains only Top Level Dependencies (cors, bootstrap)
--package-lock.json contains Nested/Peer dependencies
+-package-lock.json contains Nested/Peer dependencies. 
+-Package-lock.json maintains the Peer-dependencies.
 
 -package.json records the minimum version needed by the app
 -package-lock.json records the exact version of each installed package. 
@@ -2275,16 +2276,22 @@ package.json vs package-lock.json
 -in package.json (~) tells go up to hot-fixes 1.4.X if 1.4.1 is installed
  in package.json (^) checks if there is a newer version under 1.x.x if 1.4.1 is installed in package-lock.json - there is neither ~ nor ^
 
--Package-lock.json maintains the Peer-dependencies.
+bootstarp: '^5.1.3' => in this version - 5 is called major, 1 is called minor and 3 is called hot fix.
 
+- Tilt symbol(~) says that if there is any new hotfix version available then install it. suppose if it finds bootstrap 5.1.4 then it installs it.
+
+- Carrot symbol(^) says that if there is any new hotfix version available or if there is any minor version available then install it. suppose if it finds bootstrap 5.1.4 or 5.2.4 then it installs it. It will not update Major version. suppose if bootstrap 6 is available then this package will not update.
 
 
 
 Dependencies VS Dev-Dependencies
 ================================
-- if we need any libraries only at the time of development but not in production, those libraries should be added to DevDependencies.
+- if we need any libraries only at the time of development but not in production, those libraries should be added to DevDependencies. so when we install these we have to use --save-dev
   (karma,jasmine,tslint,eslint,cli,jest)
   ex: npm i --save-dev eslint
+  ex: npm i --save-dev nodemon
+
+  after running the above command check in DevDependencies of package.json file you will be able to see nodemon in DevDependencies.
   
 - if we need a library in both development and production environment, then those libraries should be part of dependencies.
   (bootstrap,sweetalert,react-modal)
@@ -2317,7 +2324,7 @@ ESLint
    npx eslint --init
 3. eslint .
 
-
+Eslint is used to find the 
 
 Environment Variables
 =====================
