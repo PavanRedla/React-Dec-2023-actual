@@ -4311,6 +4311,9 @@ Program-95:  Redux ToDo example
 
 8. ToDoList.js
 
+// to read the data from redux and display it in component we use "useSelector"
+
+
     import React from "react";
 	import { useSelector } from "react-redux";
 	import ToDo from "./ToDo";
