@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { BuggyCounter } from "../BuggyCounter";
 import MyErrorBoundry from "../MyErrorBoundry";
 import { myContext } from "../../utils/Mycontext";
+import UseMemoExample from "../Hooks/UseMemoExample";
+import UseCallbackExample from "../Hooks/UseCallbackExample";
+import UseReducerExample from "../Hooks/UseReducerExample";
 
 export default function Home(props) {
   const contextData = useContext(myContext);
@@ -23,16 +26,20 @@ export default function Home(props) {
       {/* this context data object value is coming from is direclty coming from index.js file to Home.js and this is how we use syntax to consume data if we write it in fucntional component.*/}
       <br />
       <h2>This is BuggyCounter component using Error Boundry</h2>
-      <MyErrorBoundry>
+      {/* <MyErrorBoundry>
         <BuggyCounter />
-      </MyErrorBoundry>
+      </MyErrorBoundry> */}
       {/* if this Buggycounter component gets or throws error then whole application will not gets crashed, we can use other components normally only this Buggy counter will not work.*/}
       <br />
       ==============================================
       <br />
       <h2>This is BuggyCounter component without Error Boundry</h2>
-      <BuggyCounter />
+      {/* <BuggyCounter /> */}
       {/* if this Buggycounter component gets or throws error then whole application gets crashed, we cannot use other components*/}
+      {/* React Hooks */}
+      <UseMemoExample />
+      {/* <UseCallbackExample /> */}
+      {/* <UseReducerExample /> */}
     </>
   );
 }
